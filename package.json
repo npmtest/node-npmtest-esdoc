@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-esdoc",     "homepage": "https://github.com/npmtest/node-npmtest-esdoc",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-esdoc.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [esdoc (v0.5.2)](https://esdoc.org/)  [![npm package](https://img.shields.io/npm/v/npmtest-esdoc.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-esdoc) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-esdoc.svg)](https://travis-ci.org/npmtest/node-npmtest-esdoc)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-esdoc",
+    "keywords": [
+        "coverage",
+        "test",
+        "esdoc"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_esdoc.js",
+    "name": "npmtest-esdoc",
+    "nameAlias": "npmtest_esdoc",
+    "nameOriginal": "npmtest-esdoc",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-esdoc.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
